@@ -11,14 +11,12 @@ function App() {
     setIsDarkMode((isDarkMode) => !isDarkMode);
   }
 
-  function handleAddItem(newItem) {
-    setItems((prevItems) => [...prevItems, newItem]);
-  }
-
   return (
     <div className={"App " + (isDarkMode ? "dark" : "light")}>
       <Header isDarkMode={isDarkMode} onDarkModeClick={handleDarkModeClick} />
-      <ShoppingList items={items} onItemFormSubmit={handleAddItem} />
+      <ShoppingList items={items} onItemSubmit />
     </div>
   );
 }
+
+export default App;
